@@ -21,20 +21,22 @@ public class AdminController {
 	@RequestMapping("/delete/{sid}")
 	public ResponseEntity<String> deleteTMAttendance(@PathVariable("sid") String studentId) {
 
-		return new ResponseEntity<String>("", HttpStatus.OK);
+		return new ResponseEntity<String>("TMAttendance for student deleted successfully", HttpStatus.OK);
 	}
 
 	@PutMapping("/update/{sid}")
 	public ResponseEntity<String> updateTMAttendance(@PathVariable("sid") String studentId,
 			@RequestBody TMAttendance tmAttendance) {
 
-		return new ResponseEntity<String>("", HttpStatus.OK);
+		return new ResponseEntity<String>("TMAttendance for student updates successfully", HttpStatus.OK);
 	}
 
 	@PostMapping("/create")
 	public ResponseEntity<String> createTMAttendance(@RequestBody TMAttendance tmAttendance) {
 
-		return new ResponseEntity<String>("", HttpStatus.OK);
+		return new ResponseEntity<String>(
+				"TMAttendance for " + tmAttendance.getStudent().getStudentId() + " registered successfully",
+				HttpStatus.OK);
 	}
 
 	@RequestMapping("/get/attendance/{id}/{year}/{month}/{date}/{shift}")
@@ -56,7 +58,8 @@ public class AdminController {
 	}
 
 	@RequestMapping("/get/attendance/{fid}")
-	public ResponseEntity<List<AttendanceDTO>> getfacultyStudentsBlockAttendance(@PathVariable("fid") String studentId) {
+	public ResponseEntity<List<AttendanceDTO>> getfacultyStudentsBlockAttendance(
+			@PathVariable("fid") String facultyId) {
 		return null;
 	}
 }
