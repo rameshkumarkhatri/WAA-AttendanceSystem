@@ -12,12 +12,7 @@
 </head>
 <body>
 		
-	<form:form modelAttribute = "login" action="/login" >
-	<form:input path="u_name" placeholder="Username" />
-	<br>
-	<form:password path="pass" placeholder="Password" />
-	<form:button name="select" value="submit"/>
-	</form:form> 
+	<h1>Welcome to the suit</h1>
 	
 	
 </body>
