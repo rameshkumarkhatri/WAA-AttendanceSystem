@@ -75,11 +75,12 @@ public class LoginController {
 		User user = userService.loginUser(login.getU_name());
 		if(user == null || user.getId()<=0)
 		{	
+			model.addAttribute("error", "true");
 			System.out.println("User null for email "+login.getU_name() +" password "+login.getPass());
 			return "login";
 		}
-		
-		
+		if(user.getPassword().equals(login.getPass()))
  		return "redirect:/show/";
+		else return "login";
 	}
 }

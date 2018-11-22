@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: TM-Attendance
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: tmattendace
+      uri: mongodb://localhost:27017/tmattendace
